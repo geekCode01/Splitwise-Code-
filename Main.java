@@ -529,3 +529,56 @@ public class Main {
         }
     }
 }
+
+
+
+> EXPENSE u1 1000 4 u1 u2 u3 u4 EQUAL
+> SHOW u1
+User2 owes User1: 250.00
+User3 owes User1: 250.00
+User4 owes User1: 250.00
+> SHOW
+User2 owes User1: 250.00
+User3 owes User1: 250.00
+User4 owes User1: 250.00
+> EXPENSE u1 1250 2 u2 u3 EXACT 370 880
+> SHOW
+User2 owes User1: 620.00
+User3 owes User1: 1130.00
+User4 owes User1: 250.00
+> EXPENSE u4 1200 4 u1 u2 u3 u4 PERCENT 40 20 20 20
+> SHOW 
+User2 owes User1: 620.00
+User3 owes User1: 1130.00
+User1 owes User4: 230.00
+User2 owes User4: 240.00
+User3 owes User4: 240.00
+> SHOW u2
+User2 owes User1: 620.00
+User2 owes User4: 240.00
+> SHOW 
+User2 owes User1: 620.00
+User3 owes User1: 1130.00
+User1 owes User4: 230.00
+User2 owes User4: 240.00
+User3 owes User4: 240.00
+> PAY u2 u1 600.0
+User2 paid 600.00 to User1
+> SHOW
+User2 owes User1: 20.00
+User3 owes User1: 1130.00
+User1 owes User4: 230.00
+User2 owes User4: 240.00
+User3 owes User4: 240.00
+> PAY u2 u1 20.0
+User2 paid 20.00 to User1
+All balances between User2 and User1 are clear.
+> SHOW
+User3 owes User1: 1130.00
+User1 owes User4: 230.00
+User2 owes User4: 240.00
+User3 owes User4: 240.00
+> EXIT
+Exiting the application.
+
+Process finished with exit code 0
